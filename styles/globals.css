@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* globals.css */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f9fafb;
+}
+
+h1,
+h2,
+h3 {
+    color: #1a202c;
+}
+
+p {
+    color: #4a5568;
+}
+
+button {
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+}
