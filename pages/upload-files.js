@@ -21,12 +21,16 @@ export default function UploadFiles() {
 
     try {
       const token = localStorage.getItem("token");
-      await axios.post("http://localhost:3003/api/images/upload", formData, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-          "Content-Type": "multipart/form-data",
-        },
-      });
+      await axios.post(
+        "https://image-upload-backend-m1dw.onrender.com/api/images/upload",
+        formData,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      );
       alert("Image uploaded successfully!");
       router.push("/fetch-images");
     } catch (error) {

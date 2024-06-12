@@ -14,7 +14,7 @@ export default function ChangePassword() {
       const { userId } = jwt_decode(token);
 
       await axios.put(
-        `http://localhost:3003/api/users/${userId}`,
+        `https://image-upload-backend-m1dw.onrender.com/api/users/${userId}`,
         { password },
         {
           headers: {

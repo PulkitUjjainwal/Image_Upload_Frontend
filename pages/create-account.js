@@ -13,10 +13,13 @@ export default function CreateAccount() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:3003/api/auth/register", {
-        email,
-        password,
-      });
+      await axios.post(
+        "https://image-upload-backend-m1dw.onrender.com/api/auth/register",
+        {
+          email,
+          password,
+        }
+      );
       router.push("/login");
     } catch (error) {
       console.error("Registration error:", error);

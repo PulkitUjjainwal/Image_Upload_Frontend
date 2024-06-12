@@ -21,7 +21,7 @@ export default function UserProfile() {
         const userId = decodedToken.userId;
 
         const userResponse = await axios.get(
-          `http://localhost:3003/api/users/${userId}`,
+          `https://image-upload-backend-m1dw.onrender.com/api/users/${userId}`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -31,7 +31,7 @@ export default function UserProfile() {
         setUser(userResponse.data);
 
         const imagesResponse = await axios.get(
-          `http://localhost:3003/api/images/images/${userId}`,
+          `https://image-upload-backend-m1dw.onrender.com/api/images/images/${userId}`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
