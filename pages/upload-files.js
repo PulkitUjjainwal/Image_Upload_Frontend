@@ -55,18 +55,21 @@ export default function UploadFiles() {
           placeholder="Schedule Publish Date"
           className="w-full mb-4"
         />
-        <Button
-          onClick={handleUpload}
-          className="w-full bg-blue-500 hover:bg-blue-600 text-white mb-4"
-        >
-          Upload
-        </Button>
-        <Button
-          onClick={() => router.push("/fetch-images")}
-          className="w-full bg-gray-500 hover:bg-gray-600 text-white"
-        >
-          View Uploaded Images
-        </Button>
+        <div className="justify-content-between">
+          {" "}
+          <Button
+            onClick={handleUpload}
+            className="w-full bg-blue-500 hover:bg-blue-600 text-white mb-4"
+          >
+            Upload
+          </Button>
+          <Button
+            onClick={() => router.push("/fetch-images")}
+            className="w-full bg-gray-500 hover:bg-gray-600 text-white"
+          >
+            View Uploaded Images
+          </Button>
+        </div>
       </div>
     </Layout>
   );

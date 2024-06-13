@@ -1,9 +1,11 @@
+// pages/create-account.js
 import { useState } from "react";
 import axios from "axios";
 import { useRouter } from "next/router";
 import Layout from "@/components/ui/Layout";
 import Input from "@/components/ui/Input";
 import Button from "@/components/ui/Button";
+import Link from "next/link";
 
 export default function CreateAccount() {
   const [email, setEmail] = useState("");
@@ -13,13 +15,10 @@ export default function CreateAccount() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post(
-        "https://image-upload-backend-m1dw.onrender.com/api/auth/register",
-        {
-          email,
-          password,
-        }
-      );
+      await axios.post("http://localhost:3003/api/auth/register", {
+        email,
+        password,
+      });
       router.push("/login");
     } catch (error) {
       console.error("Registration error:", error);
@@ -51,10 +50,15 @@ export default function CreateAccount() {
           </div>
           <Button
             type="submit"
-            className="w-full bg-blue-500 hover:bg-blue-600 text-white"
+            className="w-full bg-blue-500 hover:bg-blue-600 text-white mb-4"
           >
             Create Account
           </Button>
+          <Link href="/login">
+            <Button className="w-full bg-gray-500 hover:bg-gray-600 text-white">
+              Back to Login
+            </Button>
+          </Link>
         </form>
       </div>
     </Layout>

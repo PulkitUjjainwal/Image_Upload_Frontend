@@ -1,3 +1,4 @@
+// _app.js
 import "../styles/globals.css"; // Import global CSS
 import { useEffect } from "react";
 import { useRouter } from "next/router";

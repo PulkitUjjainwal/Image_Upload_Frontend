@@ -1,7 +1,7 @@
 // pages/user-profile.js
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { jwtDecode } from "jwt-decode";
+import { jwtDecode } from "jwt-decode"; // Correctly import jwtDecode
 import Layout from "@/components/ui/Layout";
 import Link from "next/link";
 import Button from "@/components/ui/Button";
@@ -49,25 +49,37 @@ export default function UserProfile() {
 
   return (
     <Layout>
-      <div className="flex flex-col gap-6">
+      <div className="max-w-2xl mx-auto p-8 bg-white rounded-lg shadow-lg">
         {user && (
-          <div className="bg-white rounded-lg shadow-lg p-6 flex flex-col justify-between">
-            <h2 className="text-xl font-bold mb-4">User Profile</h2>
-            <p>
+          <div className="flex flex-col items-center gap-6">
+            <h2 className="text-2xl font-bold mb-4 text-center text-blue-600">
+              User Profile
+            </h2>
+            <p className="text-lg">
               <strong>Email:</strong> {user.email}
             </p>
-            <p>
+            <p className="text-lg">
               <strong>Uploaded Images:</strong> {imageCount}
             </p>
-            <div className="flex flex-col gap-4 mt-4">
+            <div className="grid grid-cols-2 gap-4 mt-6 w-full">
               <Link href="/change-email">
-                <Button className="bg-blue-500 hover:bg-blue-600 text-white">
+                <Button className="w-full bg-blue-500 hover:bg-blue-600 text-white">
                   Change Email
                 </Button>
               </Link>
               <Link href="/change-password">
-                <Button className="bg-blue-500 hover:bg-blue-600 text-white">
+                <Button className="w-full bg-blue-500 hover:bg-blue-600 text-white">
                   Change Password
+                </Button>
+              </Link>
+              <Link href="/upload-files">
+                <Button className="w-full bg-green-500 hover:bg-green-600 text-white">
+                  Upload Images
+                </Button>
+              </Link>
+              <Link href="/fetch-images">
+                <Button className="w-full bg-gray-500 hover:bg-gray-600 text-white">
+                  View Uploaded Images
                 </Button>
               </Link>
             </div>

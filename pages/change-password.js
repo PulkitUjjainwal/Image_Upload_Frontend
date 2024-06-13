@@ -4,6 +4,8 @@ import axios from "axios";
 import Layout from "@/components/ui/Layout";
 import Input from "@/components/ui/Input";
 import Button from "@/components/ui/Button";
+import Link from "next/link";
+import jwtDecode from "jwt-decode";
 
 export default function ChangePassword() {
   const [password, setPassword] = useState("");
@@ -11,10 +13,10 @@ export default function ChangePassword() {
   const handleUpdatePassword = async () => {
     try {
       const token = localStorage.getItem("token");
-      const { userId } = jwt_decode(token);
+      const { userId } = jwtDecode(token);
 
       await axios.put(
-        `https://image-upload-backend-m1dw.onrender.com/api/users/${userId}`,
+        `http://localhost:3003/api/users/${userId}`,
         { password },
         {
           headers: {
@@ -42,10 +44,15 @@ export default function ChangePassword() {
         />
         <Button
           onClick={handleUpdatePassword}
-          className="bg-blue-500 hover:bg-blue-600 text-white"
+          className="bg-blue-500 hover:bg-blue-600 text-white mb-4"
         >
           Update Password
         </Button>
+        <Link href="/user-profile">
+          <Button className="bg-gray-500 hover:bg-gray-600 text-white">
+            Back to Profile
+          </Button>
+        </Link>
       </div>
     </Layout>
   );
