@@ -16,7 +16,7 @@ export default function CreateAccount() {
     e.preventDefault();
     try {
       await axios.post(
-        "https://image-upload-backend-m1dw.onrender.com/api/auth/register",
+        "https://image-upload-backend-ua0q.onrender.com/api/auth/register",
         {
           email,
           password,

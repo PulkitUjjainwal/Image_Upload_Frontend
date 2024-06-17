@@ -14,7 +14,7 @@ export default function ChangeEmail() {
       const { userId } = jwt_decode(token);
 
       await axios.put(
-        `https://image-upload-backend-m1dw.onrender.com/api/users/${userId}`,
+        `https://image-upload-backend-ua0q.onrender.com/api/users/${userId}`,
         { email },
         {
           headers: {

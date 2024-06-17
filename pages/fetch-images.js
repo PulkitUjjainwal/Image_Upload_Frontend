@@ -20,7 +20,7 @@ export default function FetchImages() {
         const userId = decodedToken.userId;
 
         const { data } = await axios.get(
-          `https://image-upload-backend-m1dw.onrender.com/api/images/images/${userId}`,
+          `https://image-upload-backend-ua0q.onrender.com/api/images/images/${userId}`,
           {
             headers: {
               Authorization: `Bearer ${token}`,

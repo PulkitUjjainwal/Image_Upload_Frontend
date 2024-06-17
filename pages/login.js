@@ -14,7 +14,7 @@ export default function Login() {
     e.preventDefault();
     try {
       const { data } = await axios.post(
-        "https://image-upload-backend-m1dw.onrender.com/api/auth/login",
+        "https://image-upload-backend-ua0q.onrender.com/api/auth/login",
         {
           email,
           password,

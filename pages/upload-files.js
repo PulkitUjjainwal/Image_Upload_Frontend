@@ -22,7 +22,7 @@ export default function UploadFiles() {
     try {
       const token = localStorage.getItem("token");
       await axios.post(
-        "https://image-upload-backend-m1dw.onrender.com/api/images/upload",
+        "https://image-upload-backend-ua0q.onrender.com/api/images/upload",
         formData,
         {
           headers: {
